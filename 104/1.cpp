@@ -14,6 +14,9 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+//Time complexity = O(logN)
+//Space Complexity = O(N)
+
 class Solution {
     private:
     int getDepth(TreeNode* node, int count){
