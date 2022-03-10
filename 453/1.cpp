@@ -9,6 +9,9 @@
 
 using namespace std;
 
+//Time complexity = O(N)
+//Space Complexity = O(1)
+
 class Solution {
 public:
     int minMoves(vector<int>& nums) {
@@ -17,10 +20,10 @@ public:
 
         if(N <= 1) return 0;
 
-        for(auto n:nums)
+        for(auto n:nums) //N
             minVal = min(n, minVal);
         
-        for(auto n:nums)
+        for(auto n:nums) //N
             minFiller += n - minVal;
 
         return minFiller;
@@ -33,5 +36,3 @@ int main() {
     int res = solution.minMoves(v);
     cout << res << endl;
 }
-
-// O(N*E) where N is the size of the elements in the list and E is the length of an element
