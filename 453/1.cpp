@@ -12,21 +12,18 @@ using namespace std;
 class Solution {
 public:
     int minMoves(vector<int>& nums) {
-        int minFiller = 0, maxVal = nums[0];
+        int minFiller = 0, minVal = nums[0];
         int N = nums.size();
 
-        if(N == 1) return 0;
+        if(N <= 1) return 0;
 
         for(auto n:nums)
-            maxVal = max(n, maxVal);
+            minVal = min(n, minVal);
         
         for(auto n:nums)
-            minFiller += maxVal - n;
+            minFiller += n - minVal;
 
-        while(minFiller%(N-1) != 0)
-            minFiller += N;
-
-        return minFiller/(N-1);
+        return minFiller;
     }
 };
 
